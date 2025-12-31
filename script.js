@@ -6,29 +6,32 @@ const surpriseScreen = document.getElementById('surprise-screen');
 const introImg = document.getElementById('intro-img');
 const introText = document.getElementById('intro-text');
 
-// NO Button: Hide Yes, Show Try Again, Show Gangster
+// NO Button: Gangster Cat and Remove YES
 noBtn.addEventListener('click', () => {
     introText.innerHTML = "How dare you say no to me?<br>TRY AGAIN";
     introImg.src = "assets/gangster_cat.png";
     introImg.style.display = "block";
-    yesWrapper.classList.add('hidden'); // Hide YES button
+    yesWrapper.classList.add('hidden'); // YES ko hide kiya
     noBtn.innerHTML = "TRY AGAIN";
-    noBtn.onclick = () => { location.reload(); };
+    noBtn.onclick = () => { location.reload(); }; // Wapas home par
 });
 
-// YES Button: Show Screen 2
+// YES Button: Page Change
 yesBtn.addEventListener('click', () => {
     introScreen.classList.add('hidden');
     surpriseScreen.classList.remove('hidden');
 });
 
-// Gift Click: Reveal 3 Items
+// Gift Click: HIDE Cat/Box and SHOW 3 Gifts
 function revealItems() {
+    document.getElementById('surprise-cat').classList.add('hidden');
+    document.getElementById('gift-box-container').classList.add('hidden');
+    
     document.getElementById('revealed-items').classList.add('show-items');
-    document.getElementById('surprise-title').innerHTML = "EHEHEHE GOOD<br>NOW SEE YOUR GIFTS";
+    document.getElementById('surprise-title').innerHTML = "HERE ARE YOUR GIFTS! 🎀";
 }
 
-// Modal Functions
+// Modals
 function openModal(type) {
     document.getElementById('modal-overlay').classList.remove('hidden');
     document.getElementById(`modal-${type}`).classList.remove('hidden');
