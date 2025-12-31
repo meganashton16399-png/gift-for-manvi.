@@ -12,46 +12,42 @@
     <div id="intro-screen" class="screen">
         <div class="content">
             <h1 id="intro-text">HEY<br>I'VE SOMETHING FOR YOU<br>OPEN THIS IN 2026<br>CLICK ON "YES" TO SEE</h1>
-            
             <img id="intro-img" src="" style="display:none;" class="cat-img"> 
             
             <div class="buttons-container">
                 <div class="button-wrapper" id="yes-wrapper">
-                    <img src="assets/butterfly.png" class="deco-butterfly top-left">
+                    <span class="emoji-deco top-left">🎀</span>
                     <button id="yes-btn" class="btn pill-btn">YES</button>
-                    <img src="assets/bow.png" class="deco-bow bottom-right">
+                    <span class="emoji-deco bottom-right">🎀</span>
                 </div>
                 <div class="button-wrapper">
-                    <img src="assets/butterfly.png" class="deco-butterfly top-left">
+                    <span class="emoji-deco top-left">🎀</span>
                     <button id="no-btn" class="btn pill-btn">NO</button>
-                    <img src="assets/bow.png" class="deco-bow bottom-right">
+                    <span class="emoji-deco bottom-right">🎀</span>
                 </div>
             </div>
-
-            <div class="bottom-emojis">
-                🌹 💖 🎀 🦋 💋
-            </div>
+            <div class="bottom-emojis">🌹 💖 🎀 🦋 💋</div>
         </div>
     </div>
 
     <div id="surprise-screen" class="screen hidden">
         <div class="content">
-            <img src="assets/cute_cat.png" class="cat-main">
+            <img src="assets/cute_cat.png" id="surprise-cat" class="cat-main">
             <h2 id="surprise-title">EHEHEHE GOOD<br>NOW CLICK ON THE GIFT</h2>
             
-            <div class="gift-container" onclick="revealItems()">
+            <div id="gift-box-container" class="gift-container" onclick="revealItems()">
                 <img src="assets/gift_box_main.png" class="main-gift-box">
             </div>
 
             <div id="revealed-items" class="grid-container hidden-reveal">
                 <div class="grid-item" onclick="openModal('letter')">
-                    <img src="assets/envelope.png">
+                    <img src="assets/envelope.png" alt="Envelope">
                 </div>
                 <div class="grid-item" onclick="openModal('photos')">
-                    <img src="assets/camera.png">
+                    <img src="assets/camera.png" alt="Camera">
                 </div>
                 <div class="grid-item" onclick="openModal('flowers')">
-                    <img src="assets/flowers_icon.png">
+                    <img src="assets/flowers_icon.png" alt="Flowers">
                 </div>
             </div>
         </div>
