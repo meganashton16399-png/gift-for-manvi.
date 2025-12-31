@@ -5,44 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Manvi ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="intro-screen" class="screen">
         <div class="content">
-            <h1 id="intro-text">HEY<br>I'VE SOMETHING FOR YOU<br>OPEN THIS NOW<br>CLICK ON "YES" TO SEE</h1>
+            <h1 id="intro-text">HEY<br>I'VE SOMETHING FOR YOU<br>OPEN THIS IN 2026<br>CLICK ON "YES" TO SEE</h1>
+            
             <img id="intro-img" src="" style="display:none;" class="cat-img"> 
-            <div class="buttons">
-                <button id="yes-btn" class="btn pink-btn">YES</button>
-                <button id="no-btn" class="btn pink-btn">NO</button>
+            
+            <div class="buttons-container">
+                <div class="button-wrapper" id="yes-wrapper">
+                    <img src="assets/butterfly.png" class="deco-butterfly top-left">
+                    <button id="yes-btn" class="btn pill-btn">YES</button>
+                    <img src="assets/bow.png" class="deco-bow bottom-right">
+                </div>
+                <div class="button-wrapper">
+                    <img src="assets/butterfly.png" class="deco-butterfly top-left">
+                    <button id="no-btn" class="btn pill-btn">NO</button>
+                    <img src="assets/bow.png" class="deco-bow bottom-right">
+                </div>
+            </div>
+
+            <div class="bottom-emojis">
+                🌹 💖 🎀 🦋 💋
             </div>
         </div>
     </div>
 
-    <div id="menu-screen" class="screen hidden">
+    <div id="surprise-screen" class="screen hidden">
         <div class="content">
             <img src="assets/cute_cat.png" class="cat-main">
-            <h2>EHEHEHE GOOD<br>NOW CLICK ON THE ITEMS</h2>
+            <h2 id="surprise-title">EHEHEHE GOOD<br>NOW CLICK ON THE GIFT</h2>
             
-            <div class="grid-container">
+            <div class="gift-container" onclick="revealItems()">
+                <img src="assets/gift_box_main.png" class="main-gift-box">
+            </div>
+
+            <div id="revealed-items" class="grid-container hidden-reveal">
                 <div class="grid-item" onclick="openModal('letter')">
-                    <img src="assets/envelope.png" alt="Letter">
+                    <img src="assets/envelope.png">
                 </div>
                 <div class="grid-item" onclick="openModal('photos')">
-                    <img src="assets/camera.png" alt="Photos">
+                    <img src="assets/camera.png">
                 </div>
                 <div class="grid-item" onclick="openModal('flowers')">
-                    <img src="assets/flowers_icon.png" alt="Flowers">
+                    <img src="assets/flowers_icon.png">
                 </div>
             </div>
-            <img src="assets/gift_box_main.png" class="gift-box-footer">
         </div>
     </div>
 
     <div id="modal-overlay" class="hidden" onclick="closeModal()"></div>
 
     <div id="modal-letter" class="modal hidden">
-        <div class="letter-content">
+        <div class="letter-paper">
             <p>I know this year was really hectic for us we went through so many ups and dkwns moments where things felt confusing or heavy ki chordne tk agye the 💔, but somehow we still chose each other every tem nd honestly thag means a lot to me</p>
             <p>I’m really proud of you for everything you achieved this year for the way you kept going even when it wasn’t easy and having sm peoples agaisnt u hating u , at the end of the day feels comforting like no matter how messy life gets you’re still my safe place home <3</p>
             <p>I love you so much, and I’m genuinely so proud of you. Happy new year more love, more wishes kisses mwah and us, always. 💗</p>
@@ -50,7 +68,7 @@
     </div>
 
     <div id="modal-photos" class="modal hidden wide-modal">
-        <div class="side-by-side">
+        <div class="side-layout">
             <div class="side-text">
                 <p>See Manvi look at us omfg So small and u kaali , so innocent, already looking this cute together imagine kar apne bache kese lagenge</p>
                 <p>This picture feels so soothing and cute ngl</p>
@@ -58,14 +76,14 @@
                 <p>My heart actually melted seeing this. 💗</p>
             </div>
             <div class="side-media">
-                <img src="assets/couple_1.jpg" class="couple-photo photo-right-1">
-                <img src="assets/couple_2.jpg" class="couple-photo photo-right-2">
+                <img src="assets/couple_1.jpg" class="polaroid p1">
+                <img src="assets/couple_2.jpg" class="polaroid p2">
             </div>
         </div>
     </div>
 
     <div id="modal-flowers" class="modal hidden wide-modal">
-        <div class="side-by-side">
+        <div class="side-layout">
             <div class="side-text">
                 <p>Hey Manvi, sending you lots of love and a bunch of virtual flowers, just because you deserve them and more.</p>
             </div>
