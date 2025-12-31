@@ -3,60 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Manvi 🎀</title>
+    <title>For Manvi ❤️</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 
-    <section id="screen-1" class="screen active">
-        <div class="container">
-            <h3>HEY</h3>
-            <h1>I'VE SOMETHING FOR YOU</h1>
-            <h2>OPEN THIS BEFORE 2026</h2>
-            <p>CLICK ON "YES" TO SEE</p>
-            <div class="btn-group">
-                <button class="pink-btn" onclick="nextScreen(2)">YES <span class="bow">🎀</span></button>
-                <button id="no-btn" class="pink-btn" onmouseover="dodge()">NO <span class="bow">🎀</span></button>
-            </div>
-            <div class="footer-emojis">🌹🤎🎀🦋💋</div>
-        </div>
-    </section>
-
-    <section id="screen-meme" class="screen">
-        <div class="container">
-            <img src="https://i.ibb.co/Xz9R7K8/dara-dhamka.jpg" class="cat-img" alt="Angry Bear">
-            <h2 class="dark-red">How dare you say no to me?</h2>
-            <button class="pink-btn" onclick="resetNo()">TRY AGAIN <span class="bow">🎀</span></button>
-        </div>
-    </section>
-
-    <section id="screen-2" class="screen">
-        <div class="container">
-            <img src="https://i.ibb.co/N27pxrL/happy-cat.png" class="cat-img" alt="Happy Cat">
-            <div class="msg-bubble">EHEHEHE GOOD<br>NOW CLICK ON THE GIFT BOX</div>
-            <div class="gift-box" onclick="nextScreen(3)">🎁</div>
-        </div>
-    </section>
-
-    <section id="screen-3" class="screen">
-        <div class="dashboard">
-            <div class="item" onclick="showText('letter')">
-                <img src="https://i.ibb.co/m0XpX1P/envelope.png" alt="Letter" class="icon-img">
-            </div>
-            <div class="item" onclick="showText('camera')">
-                <img src="https://i.ibb.co/vB33xWj/pink-camera.png" alt="Camera" class="icon-img">
-            </div>
-            <div class="item" onclick="showText('flowers')">
-                <img src="https://i.ibb.co/r7v0h8y/flower-bouquet.png" alt="Flowers" class="icon-img">
+    <div id="intro-screen" class="screen">
+        <div class="content">
+            <h1 id="intro-text">HEY<br>I'VE SOMETHING FOR YOU<br>OPEN THIS NOW<br>CLICK ON "YES" TO SEE</h1>
+            <img id="intro-img" src="" style="display:none;" class="cat-img"> 
+            <div class="buttons">
+                <button id="yes-btn" class="btn pink-btn">YES</button>
+                <button id="no-btn" class="btn pink-btn">NO</button>
             </div>
         </div>
-        <p class="click-hint">click on the items</p>
-    </section>
+    </div>
 
-    <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-content" id="modal-content" onclick="event.stopPropagation()">
+    <div id="menu-screen" class="screen hidden">
+        <div class="content">
+            <img src="assets/cute_cat.png" class="cat-main">
+            <h2>EHEHEHE GOOD<br>NOW CLICK ON THE ITEMS</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" onclick="openModal('letter')">
+                    <img src="assets/envelope.png" alt="Letter">
+                </div>
+                <div class="grid-item" onclick="openModal('photos')">
+                    <img src="assets/camera.png" alt="Photos">
+                </div>
+                <div class="grid-item" onclick="openModal('flowers')">
+                    <img src="assets/flowers_icon.png" alt="Flowers">
+                </div>
             </div>
+            <img src="assets/gift_box_main.png" class="gift-box-footer">
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="hidden" onclick="closeModal()"></div>
+
+    <div id="modal-letter" class="modal hidden">
+        <div class="letter-content">
+            <p>I know this year was really hectic for us we went through so many ups and dkwns moments where things felt confusing or heavy ki chordne tk agye the 💔, but somehow we still chose each other every tem nd honestly thag means a lot to me</p>
+            <p>I’m really proud of you for everything you achieved this year for the way you kept going even when it wasn’t easy and having sm peoples agaisnt u hating u , at the end of the day feels comforting like no matter how messy life gets you’re still my safe place home <3</p>
+            <p>I love you so much, and I’m genuinely so proud of you. Happy new year more love, more wishes kisses mwah and us, always. 💗</p>
+        </div>
+    </div>
+
+    <div id="modal-photos" class="modal hidden wide-modal">
+        <div class="side-by-side">
+            <div class="side-text">
+                <p>See Manvi look at us omfg So small and u kaali , so innocent, already looking this cute together imagine kar apne bache kese lagenge</p>
+                <p>This picture feels so soothing and cute ngl</p>
+                <p>It’s crazy how even here you look like the sweetest cutu</p>
+                <p>My heart actually melted seeing this. 💗</p>
+            </div>
+            <div class="side-media">
+                <img src="assets/couple_1.jpg" class="couple-photo photo-right-1">
+                <img src="assets/couple_2.jpg" class="couple-photo photo-right-2">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-flowers" class="modal hidden wide-modal">
+        <div class="side-by-side">
+            <div class="side-text">
+                <p>Hey Manvi, sending you lots of love and a bunch of virtual flowers, just because you deserve them and more.</p>
+            </div>
+            <div class="side-media">
+                <img src="assets/bouquet_cat.png" class="cat-bouquet-img">
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
